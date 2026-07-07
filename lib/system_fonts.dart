@@ -52,7 +52,7 @@ class SystemFonts {
         if (!Directory(path).existsSync()) {
           continue;
         }
-        fontFilePaths.addAll(Directory(path).listSync());
+        fontFilePaths.addAll(Directory(path).listSync(followLinks: true, recursive: true));
       }
 
       _fontPaths.addAll(fontFilePaths
